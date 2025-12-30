@@ -1,12 +1,11 @@
 services:
   - type: web
     name: openai-proxy
+    plan: free # MANDATORY for free tier
     runtime: image
     image:
       url: ghcr.io/berriai/litellm:main-stable
     envVars:
       - key: PORT
-        value: 4000
-    # numInstances: 1 (Remove: Free tier is locked to 1)
-    # healthCheckPath: /health/liveliness (Remove: Not supported on Free tier)
+        value: "4000" # Use quotes for values to avoid YAML parsing issues
     autoDeploy: true
