@@ -7,6 +7,6 @@ services:
     envVars:
       - key: PORT
         value: 4000
-    numInstances: 1
-    healthCheckPath: /health/liveliness
+    # numInstances: 1 (Remove: Free tier is locked to 1)
+    # healthCheckPath: /health/liveliness (Remove: Not supported on Free tier)
     autoDeploy: true
